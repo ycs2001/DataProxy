@@ -543,18 +543,4 @@ mypy core_modules/
 - [常见问题解答](docs/FAQ.md)
 - [最佳实践指南](docs/Best_Practices.md)
 
-### 社区资源 | Community Resources
-- [GitHub Issues](https://github.com/your-username/DataProxy/issues)
-- [讨论区](https://github.com/your-username/DataProxy/discussions)
-- [更新日志](CHANGELOG.md)
----
-
-## 📞 联系我们 | Contact
-
-- **项目维护者**: [Your Name](mailto:your.email@example.com)
-- **GitHub**: [https://github.com/your-username/DataProxy](https://github.com/your-username/DataProxy)
-- **问题反馈**: [GitHub Issues](https://github.com/your-username/DataProxy/issues)
-
----
-
 *最后更新时间: 2025-08-05*
