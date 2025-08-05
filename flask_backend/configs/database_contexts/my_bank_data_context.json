@@ -1,0 +1,19 @@
+{
+  "database_name": "my_bank_data",
+  "database_path": "my_bank_data",
+  "created_time": 1754292630.002199,
+  "business_terms": {
+    "测试术语": {
+      "definition": "这是一个测试业务术语",
+      "calculation": "test_field > 0",
+      "applicable_tables": [],
+      "examples": [],
+      "created_time": 1754292630.0023239
+    }
+  },
+  "field_mappings": {},
+  "query_scope_rules": [],
+  "tables": {},
+  "relationships": [],
+  "modified_time": 1754292630.002325
+}

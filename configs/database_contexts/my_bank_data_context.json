@@ -1,0 +1,240 @@
+{
+  "database_info": {
+    "name": "my_bank_data",
+    "path": "databases/imported/my_bank_data.db",
+    "type": "sqlite",
+    "created_at": "2025-08-01T10:33:05.176765",
+    "description": "基于数据字典生成的银行业务数据库",
+    "source": "dictionary_context_generator"
+  },
+  "tables": {
+    "contract_classification": {
+      "chinese_name": "合同五级分类表",
+      "description": "\"记录银行合同资产的风险分类信息，包括五级分类结果、分类依据及分类日期等风险要素\"",
+      "row_count": 16325,
+      "column_count": 8,
+      "source_file": "CONT_RACTCLASSIFY合同五级分类表.xlsx",
+      "columns": [
+        "CONTRACT_CL_NO",
+        "CONTRACT_NO",
+        "CUST_NO",
+        "PRODUCT_TYPE",
+        "MATURITY",
+        "CONTRACT_CL_RESULT",
+        "CONTRACT_CL_DATE",
+        "CONTRACT_CL_STATUS"
+      ],
+      "primary_keys": [
+        "CONTRACT_CL_NO",
+        "CONTRACT_NO"
+      ],
+      "business_category": "风险管理",
+      "data_dictionary_available": false
+    },
+    "corp_loan_contract_info": {
+      "chinese_name": "贷款合同信息表",
+      "description": "\"记录企业贷款合同核心信息，包括合同编号、金额、期限、利率、担保方式等关键要素\"",
+      "row_count": 16325,
+      "column_count": 18,
+      "source_file": "CORP_LOAN_CONTRACT_INFO贷款合同信息表.xlsx",
+      "columns": [
+        "cust_no",
+        "cust_name",
+        "CONTRACT_NO",
+        "due_bill_no",
+        "bsn_vrty_cd",
+        "currency_cd",
+        "dsbr_amt",
+        "payment_dt",
+        "settle_dt",
+        "maturity_prd_dt",
+        "loan_bal",
+        "loan_bal_rmb",
+        "subject_no",
+        "acg_org_name",
+        "manage_org_cd",
+        "acg_org_blng_lv1_branch_no",
+        "acg_org_blng_lv1_branch_name",
+        "data_dt"
+      ],
+      "primary_keys": [
+        "CONTRACT_NO",
+        "due_bill_no"
+      ],
+      "business_category": "\"公司贷款\"",
+      "data_dictionary_available": false
+    },
+    "corp_deposit_balance": {
+      "chinese_name": "对公存款余额表",
+      "description": "\"记录对公客户存款账户的余额信息，包含账户类型、币种、余额及开户机构等核心要素，用于存款业务统计分析。\"",
+      "row_count": 38268,
+      "column_count": 22,
+      "source_file": "CUST_INFO_RST对公存款余额表.xlsx",
+      "columns": [
+        "statistics_dt",
+        "CUST_ID",
+        "CUST_NAME",
+        "open_dt",
+        "hold_org_id",
+        "host_org_name",
+        "host_cust_manager_name",
+        "inter_idy_lrgclss",
+        "entp_ecn_grd",
+        "rgst_address",
+        "demog_val_desc",
+        "institu_cst_type",
+        "institu_cst_child_type",
+        "corp_deposit_bal",
+        "corp_deposit_y_avg_bal",
+        "BALANCE1",
+        "BALANCE2",
+        "crdt_bal_amt",
+        "corp_chrtc_dep_y_avg_bal",
+        "amt_bal",
+        "year_avg_amt_bal",
+        "CUST_ENTERPRISE_NUM"
+      ],
+      "primary_keys": [
+        "CUST_ID"
+      ],
+      "business_category": "存款业务",
+      "data_dictionary_available": false
+    }
+  },
+  "business_terms": {
+    "对公存款余额": "corporate_deposit_balance",
+    "对公有效户": "active_corporate_account",
+    "不良贷款余额": "SUM(CASE WHEN ClassifyResult IN (2,3,4) THEN LoanAmount ELSE 0 END)",
+    "存款日均余额": "average_daily_balance",
+    "存款年日均余额": "annual_average_daily_balance",
+    "存款月日均余额": "monthly_average_daily_balance",
+    "存款利率": "deposit_interest_rate",
+    "存款期限": "deposit_term",
+    "存款账户状态": "deposit_account_status",
+    "存款账户类型": "deposit_account_type",
+    "存款账户币种": "deposit_account_currency",
+    "存款账户开户日期": "deposit_account_open_date",
+    "存款账户到期日期": "deposit_account_maturity_date",
+    "存款账户余额": "deposit_account_balance",
+    "存款账户利息": "deposit_account_interest",
+    "存款账户利息税": "deposit_account_interest_tax",
+    "存款账户利息税后": "deposit_account_interest_after_tax",
+    "存款账户利息税后余额": "deposit_account_balance_after_tax",
+    "存款账户利息税后日均余额": "deposit_account_average_daily_balance_after_tax",
+    "存款账户利息税后年日均余额": "deposit_account_annual_average_daily_balance_after_tax",
+    "存款账户利息税后月日均余额": "deposit_account_monthly_average_daily_balance_after_tax",
+    "合同五级分类": "CONT_RACTCLASSIFY",
+    "正常类贷款": "ClassifyResult=0",
+    "关注类贷款": "ClassifyResult=1",
+    "次级类贷款": "ClassifyResult=2",
+    "可疑类贷款": "ClassifyResult=3",
+    "损失类贷款": "ClassifyResult=4",
+    "合同状态": "Status",
+    "生效合同": "Status=1",
+    "失效合同": "Status=2",
+    "贷款质量迁徙率": "(本期不良贷款余额-上期不良贷款余额)/上期贷款总额"
+  },
+  "field_descriptions": {
+    "test_table.test_field": {
+      "chinese_name": "测试字段",
+      "business_meaning": "这是一个测试字段",
+      "calculation_rule": "无",
+      "data_source": "测试系统"
+    },
+    "test_table.another_field": {
+      "chinese_name": "另一个字段",
+      "business_meaning": "这是另一个测试字段"
+    }
+  },
+  "query_scope_rules": [
+    {
+      "rule_type": "范围限制",
+      "description": "查询对公存款余额表的日期范围限制",
+      "condition": "查询日期范围不得超过1年",
+      "table_name": "corporate_deposit_balance"
+    },
+    {
+      "rule_type": "数据过滤",
+      "description": "过滤无效账户",
+      "condition": "账户状态为'正常'",
+      "table_name": "corporate_deposit_balance"
+    },
+    {
+      "rule_type": "业务规则",
+      "description": "计算存款日均余额",
+      "condition": "日均余额 = 存款余额 / 天数",
+      "table_name": "corporate_deposit_balance"
+    },
+    {
+      "rule_type": "业务规则",
+      "description": "查询不良贷款合同",
+      "condition": "ClassifyResult IN (2,3,4)",
+      "table_name": "contract_five_level_classification"
+    },
+    {
+      "rule_type": "业务规则",
+      "description": "查询有效合同",
+      "condition": "Status=1",
+      "table_name": "contract_five_level_classification"
+    },
+    {
+      "rule_type": "范围限制",
+      "description": "次级类贷款查询",
+      "condition": "ClassifyResult=2",
+      "table_name": "contract_five_level_classification"
+    },
+    {
+      "rule_type": "数据过滤",
+      "description": "排除已失效合同",
+      "condition": "Status<>2",
+      "table_name": "contract_five_level_classification"
+    }
+  ],
+  "database_description": {
+    "purpose": "基于数据字典生成的业务数据分析数据库",
+    "domain": "banking",
+    "tables_count": 3,
+    "total_rows": 70918,
+    "data_sources": [
+      "CONT_RACTCLASSIFY合同五级分类表.xlsx",
+      "CORP_LOAN_CONTRACT_INFO贷款合同信息表.xlsx",
+      "CUST_INFO_RST对公存款余额表.xlsx"
+    ],
+    "table_relationships": [
+      {
+        "table1": "contract_classification",
+        "table2": "corp_loan_contract_info",
+        "relationship_type": "one_to_many",
+        "common_field": "CONTRACT_NO",
+        "description": "一个合同五级分类可能对应多个贷款合同信息"
+      },
+      {
+        "table1": "contract_classification",
+        "table2": "corp_loan_contract_info",
+        "relationship_type": "one_to_many",
+        "common_field": "cust_no",
+        "description": "一个客户可能有多个贷款合同信息"
+      },
+      {
+        "table1": "corp_loan_contract_info",
+        "table2": "contract_classification",
+        "relationship_type": "many_to_one",
+        "common_field": "CONTRACT_NO",
+        "description": "多个贷款合同信息可能属于同一个合同五级分类"
+      },
+      {
+        "table1": "corp_loan_contract_info",
+        "table2": "contract_classification",
+        "relationship_type": "many_to_one",
+        "common_field": "cust_no",
+        "description": "多个贷款合同信息可能属于同一个客户"
+      }
+    ],
+    "key_business_areas": [
+      "存款业务",
+      "风险管理",
+      "\"公司信贷\""
+    ]
+  },
+  "modified_time": 1754303092.1008399
+}

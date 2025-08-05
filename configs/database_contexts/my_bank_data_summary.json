@@ -1,0 +1,12 @@
+{
+  "database_name": "my_bank_data",
+  "tables": [
+    "contract_classification",
+    "corp_loan_contract_info",
+    "corp_deposit_balance"
+  ],
+  "business_terms_count": 31,
+  "field_descriptions_count": 4,
+  "query_rules_count": 7,
+  "created_at": "2025-08-01T10:33:05.176765"
+}
