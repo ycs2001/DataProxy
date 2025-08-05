@@ -2,8 +2,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
 [![Flask](https://img.shields.io/badge/flask-2.0%2B-green.svg)](https://flask.palletsprojects.com/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/your-repo/DataProxy)
+
 
 **DataProxy** 是一个基于LLM驱动的智能数据分析平台，提供自然语言查询、智能数据洞察和可视化分析功能。专为银行业务数据分析设计，支持中文自然语言查询，无需编写SQL即可获得专业的数据分析结果。
 
@@ -548,25 +547,6 @@ mypy core_modules/
 - [GitHub Issues](https://github.com/your-username/DataProxy/issues)
 - [讨论区](https://github.com/your-username/DataProxy/discussions)
 - [更新日志](CHANGELOG.md)
-
----
-
-## 📄 许可证 | License
-
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🤝 贡献者 | Contributors
-
-感谢所有为这个项目做出贡献的开发者！
-
-Thanks to all the developers who have contributed to this project!
-
-<!-- 贡献者列表将自动生成 -->
-
 ---
 
 ## 📞 联系我们 | Contact
